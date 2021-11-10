@@ -4,9 +4,10 @@
   <%= f.input :name %><br>
   <%= f.input :address %><br>
   <%= f.input :phone_number %><br>
-  <%= f.input :category, as: :radio_buttons, collection: ['chinese', 'italian', 'japanese', 'french belgian'] %><br>
-  <%= f.submit "Add a restaurant", class: "btn btn-primary"%>
+  <%= f.input :category, as: :radio_buttons, collection: ['chinese', 'italian', 'japanese', 'french', 'belgian'] %><br>
+  <%= f.submit class: "btn btn-primary"%>
 <% end %><br>
-<%= link_to restaurants_path, class:"btn btn-secondary" do%>
-  <i class="fas fa-chevron-left"> Back</i>
+
+<%= link_to restaurants_path, class:"btn btn-secondary" do %>
+  <i class="fas fa-chevron-left"> See all restaurants</i>
 <% end %>

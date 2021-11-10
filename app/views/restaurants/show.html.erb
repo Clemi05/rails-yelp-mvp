@@ -8,9 +8,14 @@
     <li class="list-group-item"><%= "comment: #{review.content} | rating: #{review.rating}/5" %></li>
   <% end %>
 </ul>
+
+<h1>Add a review</h1>
+<%= simple_form_for [ @restaurant, @review ] do |f| %>
+  <%= f.input :content %><br>
+  <%= f.input :rating, collection: 0..5 %><br>
+  <%= f.submit "Submit review", class: "btn btn-primary" %><br>
+<% end %><br>
+
 <%= link_to restaurants_path, class:"btn btn-secondary" do %>
-  <i class="fas fa-chevron-left"> Back</i>
-<% end %> |
-<%= link_to new_restaurant_review_path(@restaurant), class:"btn btn-secondary" do %>
-  <i class="fas fa-edit"> Leave a review</i>
+  <i class="fas fa-chevron-left"> See all restaurants</i>
 <% end %>
